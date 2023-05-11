@@ -14,6 +14,7 @@
     - Windows 10 ou 11 com WSL 2
     - Spring Boot
     - Mavem como gerenciador de dependencias
+    - H2 Database e PostgreSQL
 
 ### **Configuração inicial do projeto Spring Boot**
 
@@ -40,4 +41,4 @@
 - Spring Web
 - Spring Data JPA
 - H2 Database (Testes locais)
-- PostgressSQL Driver
+- PostgreSQL Driver
