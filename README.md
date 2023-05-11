@@ -1,5 +1,7 @@
 # Projeto de Portifolio e estudos
 
+- **Definição do nome do projeto utilizado** utilizei um padrão que eu mesmo criei onde nomeio o projeto da seguinte forma: *bckndjsb.prj0001* onde *bcknd* significa backend, *jsb* significa a tecnologia/framework principal, neste caso Java Spring Boot e *prj0001* é um numero de controle sequencial para projeto número 0001
+
 ## Projeto desenvolvido em Java Spring Boot usando JPA e DTO
 
 ### **Ambiente/Ferramentas utilizadas no desenvolvimento desse projeto**
@@ -25,6 +27,13 @@
 - Gerenciador de pacotes Maven
 - Linguagem Java (versão 17)
 - Spring Boot (versão 3.0.6)
+- Metadata:
+  - Group: bckndjsb
+  - Artifact/Name: prj0001
+  - Description: Projeto de Lista de Games desenvolvido durante o curso de Java Spring Boot
+  - Package Name: com.bckndjsb.prj0001
+  - Packaging: JAR
+  - Java 17
 
 #### *Dependencias do projeto*
 
@@ -32,4 +41,3 @@
 - Spring Data JPA
 - H2 Database (Testes locais)
 - PostgressSQL Driver
-
