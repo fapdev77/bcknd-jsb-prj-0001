@@ -18,7 +18,6 @@
 
 ### **Configuração inicial do projeto Spring Boot**
 
-
 #### *Configuração inicial do projeto spring boot utilizando a ferramenta spring initializr*
 
 - [start.spring.io](https://start.spring.io/)
@@ -42,3 +41,19 @@
 - Spring Data JPA
 - H2 Database (Testes locais)
 - PostgreSQL Driver
+
+#### *Conceitos aplicados nesse projeto*
+
+- Sistemas web e recursos
+- Cliente/Servidor, HTTP, JSON
+- Padrão RESTApi para Web
+- Estruturação de projeto Spring REST
+- Entidades e ORM
+- Database seeding
+- Padrão de camadas
+- Controller, service e repository
+- Padrão DTO
+
+#### Referencias utilizadas
+
+- [H2 Database](https://www.baeldung.com/spring-boot-h2-database)
