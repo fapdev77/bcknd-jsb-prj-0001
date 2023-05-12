@@ -52,7 +52,7 @@
 - Database seeding
 - Padrão de camadas
 - Controller, service e repository
-- Padrão DTO
+- Padrão DTO (*Data Transfer Objects*)
 
 #### Referencias utilizadas
 
