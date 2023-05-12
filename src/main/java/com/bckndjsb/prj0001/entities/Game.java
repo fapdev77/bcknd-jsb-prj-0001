@@ -16,6 +16,8 @@ import jakarta.persistence.Table;
  * Utilizei a anotação @Table para definir o nome da tabela no bando de dados que essa classe esta relacionada;
  * Utilizei a anotação @Id e @GeneratedValue para definir a chave primária da tabela e como auto incremental;
  * Utilizei a anotação @Column para definir um nome customizado game_year no bando de dados, pois a palavra year pode causar problemas no SQL por ser uma palavra reservada;
+ * Utilizei a anotação @Column para definir o tamanho dos campos de descrição como TEXT pois o SQL define automaticamente como VARCHAR que somente suporta 255 caracteres
+ * enquanto o tamanho TEXTO suporta textos muito maiores;
  * 
  * @author Fabio Peres, fapdev77
  * 
@@ -34,23 +36,29 @@ public class Game {
     private Integer year;
     private String genre;
     private String platforms;
+    private Double score;
     private String imgUrl;
-    private String shotDescription;
+
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+    
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game() {
     }
 
     //este construtor recebe todos os parametros para criar o objeto ja com os valores
-    public Game(Long id, String title, Integer year, String genre, String platforms, String imgUrl,
-            String shotDescription, String longDescription) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+            String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
         this.platforms = platforms;
+        this.score = score;
         this.imgUrl = imgUrl;
-        this.shotDescription = shotDescription;
+        this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
 
@@ -94,6 +102,14 @@ public class Game {
         this.platforms = platforms;
     }
 
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
     public String getImgUrl() {
         return imgUrl;
     }
@@ -102,12 +118,12 @@ public class Game {
         this.imgUrl = imgUrl;
     }
 
-    public String getShotDescription() {
-        return shotDescription;
+    public String getshortDescription() {
+        return shortDescription;
     }
 
-    public void setShotDescription(String shotDescription) {
-        this.shotDescription = shotDescription;
+    public void setshortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
     public String getLongDescription() {
@@ -144,7 +160,5 @@ public class Game {
             return false;
         return true;
     }
-    
-    
-    
+
 }
