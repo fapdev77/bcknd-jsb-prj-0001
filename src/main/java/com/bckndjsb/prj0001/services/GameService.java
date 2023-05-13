@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.bckndjsb.prj0001.dto.GameDTO;
 import com.bckndjsb.prj0001.dto.GameMinDTO;
 import com.bckndjsb.prj0001.entities.Game;
 import com.bckndjsb.prj0001.repositories.GameRepository;
@@ -25,6 +27,15 @@ public class GameService {
 	//Injetar o repositorio GameRepository para permitir acesso aos dados.
 	@Autowired
 	private GameRepository gameRepository;
+	
+	//Retorna o game requisitado pelo id
+	@Transactional(readOnly = true)
+	public GameDTO findById(Long id) {
+		//result recebe o game id encontrado
+		Game result = gameRepository.findById(id).get();
+		GameDTO gameDTO = new GameDTO(result);
+		return gameDTO;
+	}
 	
 	//Retorna a lista utilizando o repositorio e metodos herdados da propria JPA
 	//Lembrnaod que um service deve retornar um DTO
