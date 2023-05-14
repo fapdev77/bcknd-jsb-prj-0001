@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bckndjsb.prj0001.dto.GameDTO;
+import com.bckndjsb.prj0001.dto.GameListDTO;
 import com.bckndjsb.prj0001.dto.GameMinDTO;
+import com.bckndjsb.prj0001.services.GameListService;
 import com.bckndjsb.prj0001.services.GameService;
 
 /** 
@@ -17,7 +18,7 @@ import com.bckndjsb.prj0001.services.GameService;
  * Seguindo o conceito de camadas, devemos injetar o serviço que sera utilizado nesse componente
  * @RestController
  * Utilizei a anotação @RestController para registrar o componente na aplicação como um controlador
- * Utilizei a anotação @RequestMapping(value = "/games") para definir o end point na API que sera mapeado nesse controlador
+ * Utilizei a anotação @RequestMapping(value = "/lists") para definir o end point na API que sera mapeado nesse controlador
  * Utilizei a anotação @Autowired para injetar o componente do service permitindo seu uso nesta classe.
  * Utilizei a anotação @GetMapping para definir a ação quando receber uma requisição do tipo GET
  *  
@@ -27,20 +28,24 @@ import com.bckndjsb.prj0001.services.GameService;
  */
 
 @RestController
-@RequestMapping(value = "/games")
-public class GameController {
+@RequestMapping(value = "/lists")
+public class GameListController {
+	
+	@Autowired
+	private GameListService gameListService;
 	
 	@Autowired
 	private GameService gameService;
 	
 	@GetMapping
-	public List<GameMinDTO> findAll() {
-		List<GameMinDTO> result = gameService.findAll();
+	public List<GameListDTO> findAll() {
+		List<GameListDTO> result = gameListService.findAll();
 		return result;
 	}
-	@GetMapping(value = "/{id}")
-	public GameDTO findByid(@PathVariable Long id) {
-		GameDTO result = gameService.findById(id);
+	
+	@GetMapping(value = "/{listId}/games")
+	public List<GameMinDTO> findByList(@PathVariable Long listId){
+		List<GameMinDTO> result = gameService.findByList(listId);
 		return result;
 	}
 

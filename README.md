@@ -53,6 +53,10 @@
 - Padrão de camadas
 - Controller, service e repository
 - Padrão DTO (*Data Transfer Objects*)
+- Relacionamentos N-N
+- Classe de associação com embedded id
+- Consultas SQL no Spring Data JPA
+- Projections
 
 #### Referencias utilizadas
 
