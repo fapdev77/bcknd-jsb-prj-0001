@@ -1,6 +1,7 @@
 package com.bckndjsb.prj0001.dto;
 
 import com.bckndjsb.prj0001.entities.Game;
+import com.bckndjsb.prj0001.projections.GameMinProjection;
 
 public class GameMinDTO {
 	    private Long id;
@@ -20,7 +21,16 @@ public class GameMinDTO {
 			this.imgUrl = entity.getImgUrl();
 			this.shortDescription = entity.getshortDescription();
 		}
-		
+
+		//Instanciar um objeto GameMinProjection utilizando como base os dados do Objeto entidade Game
+		public GameMinDTO(GameMinProjection projection) {
+			this.id = projection.getId();
+			this.title = projection.getTitle();
+			this.year = projection.getYear();
+			this.imgUrl = projection.getImgUrl();
+			this.shortDescription = projection.getShortDescription();
+		}
+	
 		//Para o DTO não há necessidade de metodos setters nesse projeto
 		public Long getId() {
 			return id;
