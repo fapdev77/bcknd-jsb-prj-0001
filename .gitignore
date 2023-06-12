@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Container local data directory ###
+.data
+
+### DBeaver ###
+.dbeaver
