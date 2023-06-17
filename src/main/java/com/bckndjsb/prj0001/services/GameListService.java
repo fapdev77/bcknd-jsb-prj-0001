@@ -36,7 +36,7 @@ public class GameListService {
 //	}
 	
 	//Retorna a lista utilizando o repositorio e metodos herdados da propria JPA
-	//Lembrnaod que um service deve retornar um DTO
+	//Lembrando que um service deve retornar um DTO
 	public List<GameListDTO> findAll(){
 		//Aqui eu pego a lista com todos os dados
 		List<GameList> games = gameListRepository.findAll();
