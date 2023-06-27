@@ -59,4 +59,11 @@ public class GameListController {
 		gameListService.move(listId, body.getSourceIndex(),body.getDestinationIndex());
 	}
 
+	//Teste de POST
+	@PostMapping(value = "/{listId}/teste")
+	public void teste(@PathVariable Long listId, @RequestBody ReorderingDTO body){
+		System.out.println(">> TESTE POST << ");
+		System.out.println(">> Reordering: List= "+listId + "/Source Position: "+body.getSourceIndex()+"/Destination Position: "+body.getDestinationIndex());
+	}
+
 }
